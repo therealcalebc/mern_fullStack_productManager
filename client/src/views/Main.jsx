@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
-import CreateProduct from "../components/CreateProduct";
+import NewProduct from "../components/Create/NewProduct/NewProduct";
+import ProductList from "../components/Read/ProductList/ProductList";
 // import axios from "axios";
 
 const Main = () => {
@@ -13,7 +14,9 @@ const Main = () => {
 	return (
 		<div>
 			<h1>Product Manager</h1>
-			<CreateProduct />
+			<NewProduct />
+			<hr />
+			<ProductList />
 		</div>
 	);
 };

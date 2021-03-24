@@ -1,6 +1,6 @@
 import Form from "./Form/Form";
 
-const CreateProduct = (props) => {
+const NewProduct = (props) => {
 	return (
 		<>
 			<h2>Add new products to the database</h2>
@@ -9,4 +9,4 @@ const CreateProduct = (props) => {
 	);
 };
 
-export default CreateProduct;
+export default NewProduct;
