@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { apiBaseUrl } from "../Main";
+import { apiBaseUrl } from "../../../../views/Main";
 
 const Form = () => {
 	const [title, setTitle] = useState("");

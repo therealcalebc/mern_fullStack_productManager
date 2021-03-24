@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ListItem from "./ListItem/ListItem";
-import { apiBaseUrl } from "../Main";
+import { apiBaseUrl } from "../../../views/Main";
 
 const ProductList = (props) => {
 	const [items, setItems] = useState([]);
