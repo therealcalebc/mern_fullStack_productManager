@@ -15,6 +15,7 @@ const Form = () => {
 			.post("http://localhost:8000/api/products", {
 				title: title,
 				price: price,
+				description: description,
 			})
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
