@@ -10,7 +10,9 @@ module.exports.findAllProducts = (req, res) => {
 			res.json({ results: allTheProducts });
 		})
 		.catch((err) =>
-			res.json({ message: "Something went wrong...", error: err })
+			res
+				.status(400)
+				.json({ message: "Something went wrong...", error: err })
 		);
 };
 
@@ -20,7 +22,9 @@ module.exports.findOneProduct = (req, res) => {
 			res.json(theProduct);
 		})
 		.catch((err) =>
-			res.json({ message: "Something went wrong...", error: err })
+			res
+				.status(400)
+				.json({ message: "Something went wrong...", error: err })
 		);
 };
 
@@ -28,5 +32,5 @@ module.exports.createProduct = (req, res) => {
 	const { title, price, description } = req.body;
 	Product.create({ title, price, description })
 		.then((product) => res.json(product))
-		.catch((err) => res.json(err));
+		.catch((err) => res.status(400).json(err));
 };

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ListItem from "./ListItem/ListItem";
+import { apiBaseUrl } from "../../../views/Main";
 
 const ProductList = (props) => {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:8000/api/products")
+			.get(apiBaseUrl)
 			.then((res) => {
 				console.log(res);
 				setItems(res.data.results);
@@ -17,7 +18,7 @@ const ProductList = (props) => {
 
 	const onClickRefresh = (e) => {
 		axios
-			.get("http://localhost:8000/api/products")
+			.get(apiBaseUrl)
 			.then((res) => {
 				console.log(res);
 				setItems(res.data.results);

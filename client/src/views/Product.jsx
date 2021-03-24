@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductDetails from "../components/Read/ProductDetails/ProductDetails";
-import { apiBaseUrl } from "../views/Main";
+import { apiBaseUrl } from "./Main";
 
 const Product = (props) => {
 	const { id } = props;
