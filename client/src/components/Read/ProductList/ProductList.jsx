@@ -9,6 +9,7 @@ const ProductList = (props) => {
 		axios
 			.get("http://localhost:8000/api/products")
 			.then((res) => {
+				console.log(res);
 				setItems(res.data.results);
 			})
 			.catch((err) => console.log(err));
@@ -18,6 +19,7 @@ const ProductList = (props) => {
 		axios
 			.get("http://localhost:8000/api/products")
 			.then((res) => {
+				console.log(res);
 				setItems(res.data.results);
 			})
 			.catch((err) => console.log(err));

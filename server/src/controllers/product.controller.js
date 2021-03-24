@@ -14,6 +14,16 @@ module.exports.findAllProducts = (req, res) => {
 		);
 };
 
+module.exports.findOneProduct = (req, res) => {
+	Product.findOne({ _id: req.params.id })
+		.then((theProduct) => {
+			res.json(theProduct);
+		})
+		.catch((err) =>
+			res.json({ message: "Something went wrong...", error: err })
+		);
+};
+
 module.exports.createProduct = (req, res) => {
 	const { title, price, description } = req.body;
 	Product.create({ title, price, description })

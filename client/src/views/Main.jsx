@@ -3,6 +3,8 @@ import NewProduct from "../components/Create/NewProduct/NewProduct";
 import ProductList from "../components/Read/ProductList/ProductList";
 // import axios from "axios";
 
+export const apiBaseUrl = "http://localhost:8000/api/products";
+
 const Main = () => {
 	// const [message, setMessage] = useState("Loading...");
 	// useEffect(() => {
