@@ -2,26 +2,32 @@ import { useState } from "react";
 import axios from "axios";
 
 const Form = (props) => {
-	const { notifyParent } = props;
-	const [title, setTitle] = useState("");
-	const [price, setPrice] = useState("");
-	const [description, setDescription] = useState("");
+	console.log("EditProduct.Form.props:");
+	console.log(props);
+	const { id } = props;
+	const {
+		title: currentTitle,
+		price: currentPrice,
+		description: currentDescription,
+	} = props.details;
+	const [title, setTitle] = useState(currentTitle);
+	const [price, setPrice] = useState(currentPrice);
+	const [description, setDescription] = useState(currentDescription);
 	const apiBaseUrl = "http://localhost:8000/api/products";
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 		axios
-			.post(apiBaseUrl, {
+			.put(`${apiBaseUrl}/${id}`, {
 				title: title,
 				price: price,
 				description: description,
 			})
 			.then((res) => {
 				console.log(res);
-				setTitle("");
-				setPrice("");
-				setDescription("");
-				notifyParent();
+				alert(
+					`Successfully updated product!\n${id}\n${title}\n${price}\n${description}`
+				);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -52,7 +58,7 @@ const Form = (props) => {
 					value={description}
 				/>
 			</p>
-			<button type='submit'>Create</button>
+			<button type='submit'>Update</button>
 		</form>
 	);
 };

@@ -4,7 +4,7 @@ const NewProduct = (props) => {
 	return (
 		<>
 			<h2>Add new products to the database</h2>
-			<Form />
+			<Form notifyParent={props.notifyParent} />
 		</>
 	);
 };
