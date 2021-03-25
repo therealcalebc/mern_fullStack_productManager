@@ -7,6 +7,7 @@ const ProductDetails = (props) => {
 			<h2>{title}</h2>
 			<h3>{price}</h3>
 			<p>{description}</p>
+			<button onClick={props.onClickEdit}>Edit This Product</button>
 		</div>
 	);
 };

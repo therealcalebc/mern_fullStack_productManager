@@ -7,9 +7,9 @@ function App() {
 	return (
 		<div className='App'>
 			<Router>
-				<Redirect from='/' to='products' />
+				<Redirect from='/' to='products' noThrow />
 				<Main path='products' />
-				<Product path='products/:id' />
+				<Product path='products/:id/*' />
 			</Router>
 		</div>
 	);
